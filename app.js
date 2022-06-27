@@ -6,11 +6,21 @@ Vue.component("product", {
             <span class="title-tag">{{item.title}}</span>
             <img class="item-image" v-bind:src="item.image">
             <span class="price-tag">$ {{item.price }}</span>
-            <button> Add To Cart </button>
+            <button @click="addToCart()"> Add To Cart </button>
             <span class="description-tag"> {{item.description}} </span>
         </div>
     `,
-  props: ["item"],
+  data: function () {
+    return {};
+  },
+  methods: {
+    addToCart: function () {
+      if (this.cart.includes(this.item) == false) {
+        this.cart.push(this.item);
+      }
+    },
+  },
+  props: ["item", "cart"],
 });
 
 var app = new Vue({

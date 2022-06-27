@@ -24,19 +24,27 @@
         <h1>Store</h1>
         <div id="search-area">
           <input id="search-bar" type="text" placeholder="search" />
-          <p id="cart-button">CART</p>
+          <p id="cart-button" @click="page ='checkout'">CART</p>
         </div>
         <div id="store-items">
           <product
             v-for="(product, index) in products"
             v-bind:item="product"
             v-bind:key="index"
+            v-bind:cart="cart"
             class="item-container"
           ></product>
         </div>
       </div>
 
-      <div v-if="page == 'checkout'" id="checkout-page"></div>
+      <div v-if="page == 'checkout'" id="checkout-page">
+        <h1>Cart</h1>
+        <product
+          v-for="(product, index) in cart"
+          v-bind:item="product"
+          v-bind:key="index"
+        ></product>
+      </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script src="app.js"></script>
