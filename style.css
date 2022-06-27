@@ -37,21 +37,21 @@ h1 {
   text-align: center;
 }
 
-#search-area {
+.search-area {
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid black;
 }
-#cart-button {
+.cart-store-button {
   cursor: pointer;
   transition: font-weight 0.25s ease-in-out;
 }
-#cart-button:hover {
+.cart-store-button:hover {
   font-weight: bold;
 }
 
-#store-items {
+.store-items {
   margin-top: 5%;
   display: flex;
   flex-wrap: wrap;
