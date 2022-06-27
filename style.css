@@ -1,0 +1,89 @@
+/* font-family: 'Open Sans', sans-serif */
+/* light 300 italic */
+/* regular 400 */
+/* bold 700 */
+
+* {
+  font-family: "Open Sans", sans-serif;
+}
+
+#app {
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+#welcome-page {
+  margin-top: 10%;
+  display: flex;
+  flex-direction: column;
+}
+
+#welcome-page h1 {
+  text-align: center;
+}
+
+#welcome-page h2 {
+  text-align: center;
+  font-weight: normal;
+  cursor: pointer;
+  transition: font-weight 0.25s ease-in-out;
+}
+
+#welcome-page h2:hover {
+  font-weight: bold;
+}
+
+#store-page h1 {
+  text-align: center;
+}
+
+#search-area {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid black;
+}
+#cart-button {
+  cursor: pointer;
+  transition: font-weight 0.25s ease-in-out;
+}
+#cart-button:hover {
+  font-weight: bold;
+}
+
+#store-items {
+  margin-top: 2%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.item-container {
+  flex: 33%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.title-tag {
+  font-weight: bold;
+  max-width: 200px;
+}
+
+.item-image {
+  width: 200px;
+  aspect-ratio: 1/1;
+}
+
+.price-tag {
+  font-weight: bold;
+}
+
+.description-tag {
+  overflow-y: scroll;
+  max-height: 100px;
+  font-style: italic;
+  max-width: 200px;
+  width: 200px;
+}
