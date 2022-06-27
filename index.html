@@ -24,7 +24,12 @@
         <h1>Store</h1>
         <div class="search-area">
           <input id="search-bar" type="text" placeholder="search" />
-          <p class="cart-store-button" @click="page ='checkout'">CART</p>
+          <p
+            class="cart-store-button"
+            @click="page ='checkout', updateCartTotal()"
+          >
+            CART
+          </p>
         </div>
         <div class="store-items">
           <product
@@ -43,7 +48,9 @@
           <p class="cart-store-button" @click="page = 'store'">
             Return To Store
           </p>
+          <button @click="updateCartTotal()">Update Cart Total</button>
         </div>
+        <h2 style="text-align: center">Total Of Cart: $ {{cartTotal}}</h2>
         <div class="store-items">
           <productincart
             v-for="(product, index) in cart"

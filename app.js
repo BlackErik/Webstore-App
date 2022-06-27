@@ -50,9 +50,17 @@ var app = new Vue({
     page: "welcome",
     products: [],
     cart: [],
+    cartTotal: 0,
   },
 
-  methods: {},
+  methods: {
+    updateCartTotal: function () {
+      this.cartTotal = 0;
+      for (let i = 0; i < this.cart.length; i++) {
+        this.cartTotal += this.cart[i].price;
+      }
+    },
+  },
   created: async function () {
     let response = await fetch(API_URL + "/products");
     let data = await response.json();
