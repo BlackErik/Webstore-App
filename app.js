@@ -28,17 +28,17 @@ Vue.component("productincart", {
         <div>
             <span class="title-tag">{{item.title}}</span>
             <img class="item-image" v-bind:src="item.image">
-            <span class ="price-tag"> {{item.price}}</span>
+            <span class ="price-tag">$ {{item.price}}</span>
+            <button @click="removeFromCart()"> Remove From Cart </button>
         </div>
     `,
   data: function () {
     return {};
   },
   methods: {
-    addToCart: function () {
-      if (this.cart.includes(this.item) == false) {
-        this.cart.push(this.item);
-      }
+    removeFromCart: function () {
+      let index = this.cart.indexOf(this.item);
+      this.cart.splice(index, 1);
     },
   },
   props: ["item", "cart"],

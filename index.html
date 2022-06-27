@@ -49,6 +49,7 @@
             v-for="(product, index) in cart"
             v-bind:item="product"
             v-bind:key="index"
+            v-bind:cart="cart"
             class="item-container"
           ></productincart>
         </div>
