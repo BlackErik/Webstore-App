@@ -15,9 +15,7 @@ Vue.component("product", {
   },
   methods: {
     addToCart: function () {
-      if (this.cart.includes(this.item) == false) {
-        this.cart.push(this.item);
-      }
+      this.cart.push(this.item);
     },
   },
   props: ["item", "cart"],

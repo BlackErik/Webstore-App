@@ -91,3 +91,11 @@ h1 {
   max-width: 200px;
   width: 200px;
 }
+
+button {
+  cursor: pointer;
+}
+
+.orange {
+  color: orange;
+}
