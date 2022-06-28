@@ -29,11 +29,13 @@ Vue.component("productincart", {
             <span class="title-tag">{{item.title}}</span>
             <img class="item-image" v-bind:src="item.image">
             <span class ="price-tag">$ {{item.price}}</span>
-            <button @click="removeFromCart()"> Remove From Cart </button>
+            <button @click="removeFromCart(), updateCartTotal()"> Remove From Cart </button>
         </div>
     `,
   data: function () {
-    return {};
+    return {
+      cartTotal: 0,
+    };
   },
   methods: {
     removeFromCart: function () {
@@ -41,7 +43,7 @@ Vue.component("productincart", {
       this.cart.splice(index, 1);
     },
   },
-  props: ["item", "cart"],
+  props: ["item", "cart", "updateCartTotal"],
 });
 
 var app = new Vue({
