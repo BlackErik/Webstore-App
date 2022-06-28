@@ -50,6 +50,7 @@ var app = new Vue({
   el: "#app",
   data: {
     page: "welcome",
+    searchInput: "",
     products: [],
     cart: [],
     cartTotal: 0,
@@ -67,5 +68,22 @@ var app = new Vue({
     let response = await fetch(API_URL + "/products");
     let data = await response.json();
     this.products = data;
+  },
+  computed: {
+    // Using filter and indexOf, filter your array using the user's search string
+    filteredProducts: function () {
+      var productsArray = [...this.products];
+      var searchString = this.searchInput;
+
+      searchString = searchString.trim().toLowerCase();
+
+      productsArray = productsArray.filter((product) => {
+        if (product.title.toLowerCase().indexOf(searchString) != -1) {
+          return product;
+        }
+      });
+
+      return productsArray;
+    },
   },
 });

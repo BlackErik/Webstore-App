@@ -23,7 +23,12 @@
       <div v-if="page == 'store'" id="store-page">
         <h1>Store</h1>
         <div class="search-area">
-          <input id="search-bar" type="text" placeholder="search" />
+          <input
+            id="search-bar"
+            type="text"
+            placeholder="search"
+            v-model="searchInput"
+          />
           <p
             class="cart-store-button"
             @click="page ='checkout', updateCartTotal()"
@@ -33,7 +38,7 @@
         </div>
         <div class="store-items">
           <product
-            v-for="(product, index) in products"
+            v-for="(product, index) in filteredProducts"
             v-bind:item="product"
             v-bind:key="index"
             v-bind:cart="cart"
